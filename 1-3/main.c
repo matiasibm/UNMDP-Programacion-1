@@ -4,22 +4,24 @@
 
 int main()
 {
-    int num, contador, i, anterior;
+    int num, contador, anterior;
 
     //Ingreso numero
     printf("Ingrese un numero o 0 para terminar: "); scanf("%d", &num);
-    //Asigo a anterior ese numero que entra
-    anterior = num;
+    anterior = -9999;
     contador = 0;
     while(num != 0){
-        printf("Ingrese un numero o 0 para terminar: "); scanf("%d", &num);
-        i++;
-        //Comparo si el numero que viene es mayor que el anterior,si es asi, asigno y cuento
+        //Comparo si el numero que viene es mayor que el anterior y aumenta contador
         if(num > anterior){
-            anterior = num;
             contador++;
         }
+        //El numero que entro ahora es el anterior
+        anterior = num;
+        //Pido otro numero y repite
+        printf("Ingrese un numero o 0 para terminar: "); scanf("%d", &num);
     }
-    printf("%d", contador);
+    //Muetro cuantas veces un numero supera al anterior
+    printf("%d veces supero al anterior", contador);
+
     return 0;
 }
